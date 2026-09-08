@@ -56,7 +56,7 @@ def fixture_git(repo, *args, data=None):
 
 def commit_fixture(repo):
     fixture_git(repo, "add", "--all")
-    fixture_git(repo, "commit", "-m", "Isolated fixture")
+    fixture_git(repo, "commit", "-m", "Isolated fixture\n\nCo-Authored-By: Claude Fable 5 <noreply@anthropic.com>")
     return fixture_git(repo, "rev-parse", "HEAD")
 
 
@@ -487,6 +487,23 @@ class ReleaseTests(unittest.TestCase):
         for data in (b"binary\x00", b"\xff"):
             with self.assertRaises(release.ReleaseError):
                 release.check_public_data("README.md", data)
+
+    def test_repeated_base64url_prefixes_have_bounded_scan_time(self):
+        probe = (
+            "import sys; sys.path.insert(0, sys.argv[1]); import build_release as r; "
+            "text=('eyJ'+'a'*8+'-')*87381; "
+            "assert len(text.encode()) <= r.MAX_FILE; "
+            "r.check_public_data('README.md', text.encode())"
+        )
+        result = subprocess.run(
+            [sys.executable, "-I", "-B", "-c", probe, str(TOOL.parent)],
+            capture_output=True, check=False, timeout=3,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        token = "ey" + "J" + "a" * 12 + "." + "b" * 12 + "." + "c" * 20
+        for value in (token, "Bearer " + token, '"' + token + '-"'):
+            with self.subTest(value=value[:6]), self.assertRaises(release.ReleaseError):
+                release.check_public_data("README.md", value.encode())
 
     def test_public_data_is_checked_at_build(self):
         repo, _commit = fixture_repo(self.home)

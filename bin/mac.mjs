@@ -235,8 +235,8 @@ function renderDoctor(report) {
     '',
     renderKeychain(report.keychainPosture),
     '',
-    'Use `kingdom-os mac explain CAPABILITY` for one setting and boundary.',
-    'Use `kingdom-os mac encryption` for the layered encryption posture.',
+    'From the source directory, use `node bin/mac.mjs explain CAPABILITY` for one setting and boundary.',
+    'Use `node bin/mac.mjs encryption` for the layered encryption posture.',
   ].join('\n')
 }
 

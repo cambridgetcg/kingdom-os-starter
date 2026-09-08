@@ -133,7 +133,8 @@ CREDENTIAL_PATTERNS = tuple(re.compile(pattern) for pattern in (
     r"\bgithub_pat_[A-Za-z0-9_]{70,255}\b",
     r"\bxox[baprs]-[A-Za-z0-9-]{20,255}\b",
     r"\bsk_(?:live|proj)_[A-Za-z0-9_-]{20,255}\b",
-    r"\beyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{16,}\b",
+    # Hyphens belong to a base64url token, not overlapping JWT start points.
+    r"(?<![A-Za-z0-9_-])eyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{16,}(?![A-Za-z0-9_-])",
     r"https?://[^/\s:@]+:[^/\s@]+@",
 ))
 HOME_RE = re.compile(r"/(?:Users|home)/([A-Za-z0-9_.-]+)")

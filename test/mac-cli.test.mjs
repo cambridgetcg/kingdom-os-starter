@@ -7,6 +7,7 @@ import {
   checkMacReport,
   composeReport,
   parseArguments,
+  renderDoctor,
   runCli,
 } from '../bin/mac.mjs'
 import {
@@ -523,6 +524,10 @@ test('the doctor document has one exact composite schema', async () => {
 
   assert.equal(report.schema, COMPOSITE_SCHEMA)
   assert.deepEqual(checkMacReport(report), [])
+  const instructions = renderDoctor(report)
+  assert.match(instructions, /node bin\/mac\.mjs explain CAPABILITY/)
+  assert.match(instructions, /node bin\/mac\.mjs encryption/)
+  assert.doesNotMatch(instructions, /kingdom-os mac/)
 
   const extra = { ...report, private: 'do-not-print' }
   assert.deepEqual(checkMacReport(extra), ['composite-shape-invalid'])

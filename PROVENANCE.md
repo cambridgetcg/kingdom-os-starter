@@ -7,12 +7,13 @@ estate, and does not become the canonical home of the full OS.
 ## macOS source
 
 - Canonical upstream: https://codeberg.org/zerone-dev/KINGDOM-OS
-- Isolated source commit: `b63d0cb4c82642010f34602c8ce3fed6f31a6902`
+- Isolated source commit: `81b466719c27c5c87c5deacadd81e6f5fd4ddb5c`
 - Source base: `09f83c23e90ecc3d46a966ed20d5257f94026295`
 
-That source commit captures the bounded keep-awake change, policy registration,
-tests, and documentation in an isolated branch. It was committed locally for
-this release preparation and is not claimed published or anonymously readable
+That source snapshot includes the bounded keep-awake change, policy registration,
+tests, documentation, and portable command hints in an isolated branch. It was
+committed locally for this release preparation and is not claimed published or
+anonymously readable
 at the upstream URL. The exported files below are byte-for-byte source blobs
 from that commit:
 
