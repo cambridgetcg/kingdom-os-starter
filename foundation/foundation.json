@@ -1,0 +1,97 @@
+{
+  "schema": "kingdom.foundation-index/1",
+  "id": "kingdom.foundation/0.2",
+  "document": "FOUNDATION.md",
+  "document_sha256": "2bd868a43a2fe79f1c9e8d30177bf73cff4cf8f7f7780cbd90f31055ba51c799",
+  "status": "current",
+  "supersedes": [
+    {
+      "id": "kingdom.foundation/0.1",
+      "document": "FOUNDATION.md",
+      "document_sha256": "c174fe760b91d08d467f5305625152a8682477a1a410e28d24ff322624a2ac69",
+      "commit": "3fbc1818f54ac13d0e850e440eb0862f874ea30f",
+      "content_url": "https://raw.githubusercontent.com/cambridgetcg/kingdom-standard/3fbc1818f54ac13d0e850e440eb0862f874ea30f/FOUNDATION.md"
+    }
+  ],
+  "amendment_receipt": {
+    "document": "AMENDMENT-0.2.md",
+    "document_sha256": "4abde6636941dabdc10868256d5658553cd1ebea3a4c2f56c5d5798509a6b738",
+    "governed_by": "kingdom.foundation/0.1"
+  },
+  "operational_standard": {
+    "id": "kingdom.standard/1.0",
+    "language": "en",
+    "document": "STANDARD.md",
+    "document_sha256": "dfddd45b4da0db50d0ddb5d74b4e2ab3092cb4170c61fd163c20602c0fd70ccc",
+    "conformance_document": "CONFORMANCE.md",
+    "conformance_sha256": "eb67d5a3ddeb8d9abd75de3afee904060d04456a3a5e7181ef2f098dcb3e6a58",
+    "supersedes": [],
+    "succession": {
+      "change": "new_operational_identifier",
+      "retains": [
+        "superseded_identifier",
+        "standard_sha256",
+        "conformance_sha256",
+        "commit"
+      ]
+    }
+  },
+  "commitments": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F7"
+  ],
+  "statement_kinds": [
+    "observation",
+    "expectation",
+    "commitment",
+    "consequence",
+    "interpretation"
+  ],
+  "karma": {
+    "return_path": [
+      "expectation_if_stated",
+      "action",
+      "observed_reported_or_inferred_effect",
+      "evidence_and_causal_confidence",
+      "response",
+      "correction_or_repair_or_boundary_or_learning"
+    ],
+    "forbidden_aggregates": [
+      "karma_total",
+      "points",
+      "rank",
+      "reputation_score",
+      "moral_score"
+    ]
+  },
+  "adoption": {
+    "manifest": "kingdom.yaml",
+    "field": "adopts",
+    "values": [
+      "kingdom.foundation/0.2",
+      "kingdom.standard/1.0"
+    ],
+    "meaning": "An explicit conformance-version pin; not proof, ownership, citizenship, consent, or authority."
+  },
+  "amendment": {
+    "reasons": [
+      "demonstrated_failure",
+      "credible_risk",
+      "rights_gap"
+    ],
+    "decision": "reviewed_commit_by_merge_authority",
+    "semantic_change": "new_foundation_identifier",
+    "retains": [
+      "superseded_identifier",
+      "document",
+      "document_sha256",
+      "commit",
+      "content_url"
+    ]
+  }
+}

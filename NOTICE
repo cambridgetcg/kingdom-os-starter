@@ -1,0 +1,25 @@
+KINGDOM OS macOS starter
+
+The selected KINGDOM OS runtime, tests, and release-owned documentation and
+tooling are distributed under the root MIT LICENSE, as chosen for this public
+subset by the project's operator.
+
+Separate Foundation reference
+-----------------------------
+foundation/FOUNDATION.md and foundation/foundation.json are exported verbatim
+from cambridgetcg/kingdom-standard. They retain the CC0 1.0 Universal terms
+provided in foundation/LICENSE. The root MIT license does not replace those
+terms or relicense the Creative Commons legal text.
+
+This is a partial reference export. The Foundation's index and relative links
+also describe upstream documents not included here. No conformance, identity,
+enrollment, trademark right, or action authority follows from inclusion.
+
+External runtime facilities
+---------------------------
+Node.js, Apple/macOS executables, and Git are not bundled. Their availability,
+licenses, and platform permissions remain separate from this source release.
+
+See PROVENANCE.md for the exact source commits and export boundary. Public
+source and checksums allow byte comparison; they do not certify safety,
+authenticate a person, grant execution authority, or prove subjective states.
