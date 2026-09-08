@@ -1,0 +1,50 @@
+{
+  "artifactURL": "https://github.com/cambridgetcg/kingdom-os-starter/releases/download/v0.1.0/kingdom-os-starter-0.1.0.tar.gz",
+  "canonicalURL": "https://raw.githubusercontent.com/cambridgetcg/kingdom-os-starter/main/release.json",
+  "checksumURL": "https://github.com/cambridgetcg/kingdom-os-starter/releases/download/v0.1.0/SHA256SUMS",
+  "effects": {
+    "awake": "explicit finite foreground power action",
+    "execution": "explicit invocation only",
+    "observers": "coarse host metadata",
+    "readingOrExtracting": "starts nothing"
+  },
+  "filename": "kingdom-os-starter-0.1.0.tar.gz",
+  "foundationScope": "optional partial reference export; no automatic import or adoption",
+  "licenses": {
+    "code": "MIT",
+    "foundation": "CC0-1.0"
+  },
+  "repository": "https://github.com/cambridgetcg/kingdom-os-starter",
+  "requirements": {
+    "node": ">=22",
+    "releaseTooling": "Python >=3.11; POSIX; Git for build"
+  },
+  "schema": "kingdom.os-starter-release/0.1",
+  "sha256": "cca15ca8179d6736b0e72ab99090023ac601121624708699296dfc6620e5638f",
+  "size": 76516,
+  "source": {
+    "commit": "21382f834b51164d541ac7452f7bcea6211252f8",
+    "commitURL": "https://github.com/cambridgetcg/kingdom-os-starter/commit/21382f834b51164d541ac7452f7bcea6211252f8",
+    "repository": "https://github.com/cambridgetcg/kingdom-os-starter",
+    "tag": "v0.1.0",
+    "tagURL": "https://github.com/cambridgetcg/kingdom-os-starter/tree/v0.1.0",
+    "tree": "ed9696c64c0efb374cc3b3954aca996f4afbb171",
+    "treeURL": "https://github.com/cambridgetcg/kingdom-os-starter/tree/21382f834b51164d541ac7452f7bcea6211252f8"
+  },
+  "status": "preview",
+  "testedPlatform": {
+    "architecture": "arm64",
+    "basis": "maintainer-reported host; not tested by this builder",
+    "os": "macOS",
+    "version": "26.3.1"
+  },
+  "verification": {
+    "commands": [
+      "node --test test/*.test.mjs",
+      "PYTHONDONTWRITEBYTECODE=1 python3 tools/test_release.py"
+    ],
+    "limits": "Hashes match bytes, not safety, authority, installation, awakefulness, or conformance. Publication requires separate test review.",
+    "testResults": "not-embedded"
+  },
+  "version": "0.1.0"
+}
